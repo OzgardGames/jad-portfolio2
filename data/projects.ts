@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: "Crowns of Anchors",
     year: "2026",
     engine: "Unreal Engine 5",
-    role: "Art Lead / Technical Artist / Blueprint Programmer",
+    role: "Technical Artist / UI Designer / Blueprint Programmer",
     description:
       "Stylized roguelike RPG centered on gameplay-driven visual systems, full UI implementation, shader-based readability, and production-ready pipelines.",
     longDescription:
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Tools",
     ],
 
-    image: "/projects/crowns/hero.png",
+    image: "/menus/coa.webp",
     accent: "#d85b19",
     duration: "8 Months",
     team: "Team of 12",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
         title: "Visual Direction & Art Leadership",
         text:
           "Defined the visual identity through documentation, concepts, and art direction across the team.",
-        image: "/projects/crowns/visual-direction.png",
+        image: "/projects/crowns/visual-direction.webp",
         breakdownStyle: "visual",
         breakdown: {
           video: "/projects/crowns/videos/visual-direction.mp4",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
         title: "UI Design & Gameplay Systems",
         text:
           "Full UI system designed and implemented from concept to gameplay integration, including squad management and dynamic feedback.",
-        image: "/projects/crowns/ui.png",
+        image: "/projects/crowns/ui.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/crowns/videos/ui.mp4",
@@ -216,7 +216,7 @@ export const projects: Project[] = [
         title: "Shader & Material Systems",
         text:
           "Shaders built for readability and stylization.",
-        image: "/projects/crowns/shader.png",
+        image: "/projects/crowns/shader.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/crowns/videos/shaders.mp4",
@@ -245,7 +245,7 @@ export const projects: Project[] = [
         title: "Environment & Materials",
         text:
           "Stylized environment using hand-painted textures and procedural material techniques.",
-        image: "/projects/crowns/environment.png",
+        image: "/projects/crowns/environment.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/crowns/videos/environment.mp4",
@@ -274,7 +274,7 @@ export const projects: Project[] = [
         title: "Character Pipeline",
         text:
           "Character creation, rigging, animation, and integration.",
-        image: "/projects/crowns/characters.png",
+        image: "/projects/crowns/characters.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/crowns/videos/character-pipeline.mp4",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     title: "Whiskey Business",
     year: "2025",
     engine: "Unreal Engine 5",
-    role: "Lead Artist / Technical Artist",
+    role: "Technical Artist / Gameplay & Tool Programmer",
     description:
       "Stylized party brawler featuring shared character rigs, shader-based gameplay readability, and physics-driven combat systems.",
     longDescription:
@@ -343,7 +343,7 @@ export const projects: Project[] = [
       "Level Design",
       "Tools",
     ],
-    image: "/projects/whiskey/hero.png",
+    image: "/menus/landing.webp",
     accent: "#5f8f7b",
     duration: "4 Months",
     team: "Team of 6",
@@ -377,7 +377,7 @@ export const projects: Project[] = [
         title: "Shared Character Pipeline",
         text:
           "I created the four playable characters from modeling through animation, then designed a shared rig structure so they could all reuse the same animation set while maintaining distinct silhouettes and personalities.",
-        image: "/projects/whiskey/characters.png",
+        image: "/projects/whiskey/characters.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whiskey/videos/characters.mp4",
@@ -389,7 +389,7 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/whiskey/characters.png",
+              image: "/projects/whiskey/characters.webp",
               label: "Cast Lineup",
               caption:
                 "The four playable characters shown together to highlight silhouette, scale, and personality within a unified style.",
@@ -426,7 +426,7 @@ export const projects: Project[] = [
         title: "Shader-Based Readability Systems",
         text:
           "I created multiple material systems to improve stylization and gameplay clarity, including a custom toon shader, an X-ray wall-visibility effect, and outline feedback for interactable props.",
-        image: "/projects/whiskey/shader.png",
+        image: "/projects/whiskey/shader.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whiskey/videos/shaders.mp4",
@@ -470,7 +470,7 @@ export const projects: Project[] = [
         title: "Physics-Driven Combat Interactions",
         text:
           "I worked on weapon handling, carrying, throwing, and ragdoll transitions so the game’s exaggerated combat still felt grounded and responsive.",
-        image: "/projects/whiskey/ragdoll.png",
+        image: "/projects/whiskey/ragdoll.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whiskey/videos/physics-combat.mp4",
@@ -509,7 +509,7 @@ export const projects: Project[] = [
         title: "Gameplay Programming",
         text:
           "Beyond technical art, I implemented a few core gameplay behaviors directly in Unreal, including dash and ragdoll-related logic tied to combat feel.",
-        image: "/projects/whiskey/dash.png",
+        image: "/projects/whiskey/dash.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whiskey/videos/gameplay.mp4",
@@ -543,7 +543,7 @@ export const projects: Project[] = [
         title: "Environment Art, Tooling & Atmosphere",
         text:
           "I contributed to the cowboy tavern environment through modular prop creation, level blockout, a procedural plank tool, simple atmospheric VFX, and lighting polish.",
-        image: "/projects/whiskey/planks.png",
+        image: "/projects/whiskey/planks.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whiskey/videos/w-environment.mp4",
@@ -555,7 +555,7 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/whiskey/blockout.png",
+              image: "/projects/whiskey/blockout.webp",
               caption:
                 "An early level blockout established the tavern layout and informed later refinements to the final playable space.",
             },
@@ -585,13 +585,13 @@ export const projects: Project[] = [
     title: "Whispers of the Djinn",
     year: "2025",
     engine: "Unreal Engine 5",
-    role: "Technical Artist / Gameplay Developer",
+    role: "Technical Artist / Game Programmer",
     description:
       "Co-op stealth prototype focused on shader-driven gameplay and multiplayer systems.",
     longDescription:
       "Whispers of the Djinn is a cooperative stealth prototype centered on atmosphere, shader-driven interaction, and role-based multiplayer gameplay inspired by Little Nightmares and Reanimal.",
     categories: ["Technical Art", "Gameplay", "Shaders", "Level Design"],
-    image: "/projects/whispers/scene1.png",
+    image: "/menus/wod.webp",
     accent: "#1f3b4d",
     duration: "Ongoing",
     team: "Solo Project",
@@ -616,7 +616,7 @@ export const projects: Project[] = [
         title: "Shader-Based Reveal System",
         text:
           "A lantern-driven material system where hidden objects are revealed only under the correct light conditions.",
-        image: "/projects/whispers/reveal2.png",
+        image: "/projects/whispers/reveal2.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whispers/videos/reveal-system.mp4",
@@ -627,27 +627,27 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/whispers/mat-graph.png",
+              image: "/projects/whispers/mat-graph.webp",
               caption:
                 "The material graph collects data from the light through a Material Parameter Collection and uses it to drive the opacity value.",
             },
             {
-              image: "/projects/whispers/reveal1.png",
+              image: "/projects/whispers/reveal1.webp",
               caption:
                 "When the light is not shining on a box, it remains invisible. Three hidden boxes are placed in the scene.",
             },
             {
-              image: "/projects/whispers/reveal2.png",
+              image: "/projects/whispers/reveal2.webp",
               caption:
                 "The first box becomes visible once the light rotates toward it.",
             },
             {
-              image: "/projects/whispers/reveal3.png",
+              image: "/projects/whispers/reveal3.webp",
               caption:
                 "The second box is revealed as the light continues across the scene.",
             },
             {
-              image: "/projects/whispers/reveal4.png",
+              image: "/projects/whispers/reveal4.webp",
               caption:
                 "The third box appears once the final light position reaches it.",
             },
@@ -697,7 +697,7 @@ export const projects: Project[] = [
         title: "Multiplayer Role System",
         text:
           "A two-player setup where each controller spawns and possesses the correct role to support asymmetric cooperation.",
-        image: "/projects/whispers/multiplayer1.png",
+        image: "/projects/whispers/multiplayer1.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whispers/videos/multiplayer-role.mp4",
@@ -708,12 +708,12 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/whispers/multiplayer1.png",
+              image: "/projects/whispers/multiplayer1.webp",
               caption:
                 "The system ensures the correct character is spawned with the right role and ability set, confirmed through different controls, objects, and skeletons.",
             },
             {
-              image: "/projects/whispers/multiplayer2.png",
+              image: "/projects/whispers/multiplayer2.webp",
               caption:
                 "Characters spawn with differences that automatically apply distinct rules and behaviors.",
             },
@@ -725,7 +725,7 @@ export const projects: Project[] = [
         title: "Replicated Interaction Systems",
         text:
           "Early replicated behaviours used to validate shared interaction across clients.",
-        image: "/projects/whispers/pickable1.png",
+        image: "/projects/whispers/pickable1.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/whispers/videos/pickup.mp4",
@@ -736,27 +736,27 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/whispers/pickable2.png",
+              image: "/projects/whispers/pickable2.webp",
               caption:
                 "Replicated behavior showing the brother's ability to pick up items.",
             },
             {
-              image: "/projects/whispers/pickable3.png",
+              image: "/projects/whispers/pickable3.webp",
               caption:
                 "Replicated behavior showing the brother's ability to drop items.",
             },
             {
-              image: "/projects/whispers/pickable4.png",
+              image: "/projects/whispers/pickable4.webp",
               caption:
                 "Replicated behavior showing the brother's ability to push heavy objects.",
             },
             {
-              image: "/projects/whispers/pickable5.png",
+              image: "/projects/whispers/pickable5.webp",
               caption:
                 "Replicated behavior showing the sister's ability to interact with buttons.",
             },
             {
-              image: "/projects/whispers/pickable6.png",
+              image: "/projects/whispers/pickable6.webp",
               caption:
                 "Replicated behavior showing the brother's ability to interact with buttons.",
             },
@@ -771,13 +771,13 @@ export const projects: Project[] = [
     title: "Ties of Kin",
     year: "2023",
     engine: "Unity",
-    role: "Gameplay Programming / Game Design",
+    role: "Gameplay Programmer / Game Designer",
     description:
       "Gameplay-focused hand-drawn platformer prototype centered on responsiveness, player control, and systemic abilities.",
     longDescription:
       "Gameplay-first prototype focused on movement responsiveness, player control, level design, and expressive mechanics.",
     categories: ["Gameplay", "Animation", "Level Design"],
-    image: "/projects/ties/hero.png",
+    image: "/menus/about.webp",
     accent: "#8b6a3e",
     duration: "Prototype",
     team: "Solo Project",
@@ -796,7 +796,7 @@ export const projects: Project[] = [
         title: "Movement & Responsiveness",
         text:
           "A player controller designed around responsiveness and control, using techniques like input buffering, coyote time, and velocity tuning to create a fluid and forgiving movement experience.",
-        image: "/projects/ties/Movement2.png",
+        image: "/projects/ties/Movement2.webp",
         breakdownStyle: "visual",
         breakdown: {
           video: "/projects/ties/videos/movement.mp4",
@@ -860,7 +860,7 @@ export const projects: Project[] = [
         title: "Ability System",
         text:
           "A layered ability system allowing the player to chain actions and express movement through a wide range of mechanics.",
-        image: "/projects/ties/ability.png",
+        image: "/projects/ties/ability.webp",
         breakdownStyle: "visual",
         breakdown: {
           video: "/projects/ties/videos/abilities.mp4",
@@ -916,7 +916,7 @@ export const projects: Project[] = [
         title: "Environment Interaction System",
         text:
           "Abilities extend beyond movement by interacting directly with the environment, enabling systemic gameplay and puzzle-like interactions.",
-        image: "/projects/ties/interaction.png",
+        image: "/projects/ties/interaction.webp",
         breakdownStyle: "visual",
         breakdown: {
           video: "/projects/ties/videos/interaction.mp4",
@@ -960,7 +960,7 @@ export const projects: Project[] = [
         title: "Level Design & Prototyping",
         text:
           "Multiple test environments were created to validate mechanics, refine gameplay feel, and explore how systems interact in level design.",
-        image: "/projects/ties/hero.png",
+        image: "/projects/ties/hero.webp",
         breakdownStyle: "technical",
         breakdown: {
           video: "/projects/ties/videos/levels.mp4",
@@ -972,25 +972,25 @@ export const projects: Project[] = [
           ],
           steps: [
             {
-              image: "/projects/ties/hero.png",
+              image: "/projects/ties/hero.webp",
               label: "Hero Artwork",
               caption:
                 "Hand-drawn hero scene used as the visual identity for the project and as a testbed for parallax and mood.",
             },
             {
-              image: "/projects/ties/level1.png",
+              image: "/projects/ties/level1.webp",
               label: "Level 1",
               caption:
                 "Early level prototype used to test the fluidity of the character’s core movement.",
             },
             {
-              image: "/projects/ties/level2.png",
+              image: "/projects/ties/level2.webp",
               label: "Level 2",
               caption:
                 "Second prototype space focused on abilities and interaction with the environment.",
             },
             {
-              image: "/projects/ties/level3.png",
+              image: "/projects/ties/level3.webp",
               label: "Level 3",
               caption:
                 "Third prototype space used to test platforming difficulty and ability responsiveness.",

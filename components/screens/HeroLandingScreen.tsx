@@ -14,7 +14,7 @@ export default function HeroLandingScreen({
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/projects/whiskey/hero.png"
+          src="/menus/landing.webp"
           alt="Portfolio hero artwork"
           className="h-full w-full object-cover object-center"
         />

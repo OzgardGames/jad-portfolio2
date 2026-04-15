@@ -22,28 +22,30 @@ export default function SkillsScreen({ onBack }: Props) {
         </div>
 
         <div className="mt-10 grid gap-8 xl:grid-cols-[0.34fr_0.66fr]">
-          <aside className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
+          {/* LEFT PANEL */}
+          <aside className="rounded-[2rem] border border-black/8 bg-gradient-to-br from-white/80 to-[#f8f6f1] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
             <p className="text-[clamp(1rem,1.3vw,1.4rem)] font-light uppercase tracking-[-0.03em] text-[#94a394]">
               Capability Map
             </p>
 
-            <h1 className="mt-3 text-[clamp(3rem,6vw,6.5rem)] font-black uppercase leading-[0.88] tracking-[-0.07em] text-[#d85b19]">
+            <h1 className="mt-3 text-[clamp(2.6rem,5vw,5.2rem)] font-black uppercase leading-[0.9] tracking-[-0.07em] text-[#d85b19]">
               Skills
             </h1>
 
             <p className="mt-6 text-lg leading-relaxed text-[#4b564f]">
-              My work sits between art, design, and implementation. These are the
-              tools and production areas I use most across technical art and gameplay
-              development.
+              My skill set sits between art, design, and engineering. I work
+              across technical art, gameplay systems, and production support,
+              with a focus on building clear visuals, functional tools, and
+              readable implementation.
             </p>
 
-            <div className="mt-8 space-y-4 border-t border-black/6 pt-8 text-sm sm:text-base">
+            <div className="mt-8 space-y-5 border-t border-black/6 pt-8 text-sm sm:text-base">
               <div>
                 <p className="font-semibold uppercase tracking-[0.16em] text-[#94a394]">
                   Main Focus
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Technical Art / Gameplay Systems
+                  Technical Art / Game Design / Gameplay Systems 
                 </p>
               </div>
 
@@ -61,17 +63,18 @@ export default function SkillsScreen({ onBack }: Props) {
                   Approach
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Visual quality, real-time problem solving, and production support
+                  Bridging art and code with simple and readable systems.
                 </p>
               </div>
             </div>
           </aside>
 
+          {/* RIGHT PANEL */}
           <div className="grid gap-8 md:grid-cols-2">
             {skillGroups.map((group) => (
               <section
                 key={group.title}
-                className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8"
+                className="rounded-[2rem] border border-black/8 bg-gradient-to-br from-white/75 to-[#fffaf6] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition hover:-translate-y-1 sm:p-8"
               >
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#94a394]">
                   Branch
@@ -89,7 +92,7 @@ export default function SkillsScreen({ onBack }: Props) {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full bg-[#eef1eb] px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-[#4b564f] sm:text-sm"
+                      className="rounded-full border border-[#d85b19]/10 bg-[#f3eee8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-[#4b564f] transition hover:border-[#d85b19]/30 hover:text-[#d85b19] sm:text-sm"
                     >
                       {item}
                     </span>

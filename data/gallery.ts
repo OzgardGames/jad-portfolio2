@@ -42,4 +42,28 @@ export const galleryItems: GalleryItem[] = [
     type: "Technical Art",
     image: "/menu/gallery.jpg",
   },
+    {
+    id: "gallery-07",
+    title: "Visual Experiment",
+    type: "Technical Art",
+    image: "/menu/gallery.jpg",
+  },
+    {
+    id: "gallery-08",
+    title: "Visual Experiment",
+    type: "Technical Art",
+    image: "/menu/gallery.jpg",
+  },
+    {
+    id: "gallery-09",
+    title: "Visual Experiment",
+    type: "Technical Art",
+    image: "/menu/gallery.jpg",
+  },
+    {
+    id: "gallery-10",
+    title: "Visual Experiment",
+    type: "Technical Art",
+    image: "/menu/gallery.jpg",
+  },
 ];

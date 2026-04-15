@@ -31,8 +31,8 @@ export default function MenuLandingScreen({
 
   return (
     <section className="h-screen overflow-hidden bg-[#efefec] text-[#18251f]">
-      <div className="mx-auto grid h-full max-w-[1800px] grid-cols-1 lg:grid-cols-[0.38fr_0.62fr]">
-        <aside className="flex h-full flex-col px-7 py-7 sm:px-10 sm:py-9 lg:px-16 lg:py-14">
+      <div className="mx-auto grid h-full max-w-[1800px] grid-cols-1 overflow-hidden lg:grid-cols-[0.38fr_0.62fr]">
+        <aside className="flex h-full min-h-0 flex-col overflow-hidden px-7 py-7 sm:px-10 sm:py-9 lg:px-16 lg:py-14">
           <button
             onClick={onBack}
             className="w-fit text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
@@ -50,7 +50,7 @@ export default function MenuLandingScreen({
             </h2>
           </div>
 
-          <nav className=" flex flex-1 flex-col justify-center gap-7 xl:gap-8">
+          <nav className="mt-16 flex min-h-0 flex-1 flex-col justify-center gap-7 xl:gap-8">
   {items.map((item) => {
     const isActive = selected === item.id;
 

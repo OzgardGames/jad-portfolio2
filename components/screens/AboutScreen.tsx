@@ -1,3 +1,5 @@
+import { Mail, FolderGit2, Brush, Link } from "lucide-react";
+
 type Props = {
   onBack: () => void;
 };
@@ -15,26 +17,47 @@ export default function AboutScreen({ onBack }: Props) {
           </button>
 
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#94a394]">
-            About / Contact
+            About
           </p>
         </div>
 
         <div className="mt-10 grid gap-8 xl:grid-cols-[0.42fr_0.58fr]">
-          <aside className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
+          {/* LEFT PANEL */}
+          <aside className="rounded-[2rem] border border-black/8 bg-gradient-to-br from-white/80 to-[#f8f6f1] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
             <p className="text-[clamp(1rem,1.3vw,1.4rem)] font-light uppercase tracking-[-0.03em] text-[#94a394]">
               Profile
             </p>
 
-            <h1 className="mt-3 text-[clamp(3rem,6vw,6.5rem)] font-black uppercase leading-[0.88] tracking-[-0.07em] text-[#d85b19]">
-              About
+          {/* PROFILE IMAGE */}
+          <div className="mt-6 flex justify-center">
+            <div className="relative h-60 w-60 sm:h-90 sm:w-90">
+              {/* glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#d85b19]/25 to-transparent blur-[6px]" />
+
+              {/* image */}
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-black/10 bg-[#e8ebe5] shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+                <img
+                  src="/about/profile.jpeg"
+                  alt="Jad Boukentar"
+                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
+
+            {/* TITLE */}
+            <h1 className="mt-9 text-center text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-[#d85b19]">
+              About me
             </h1>
 
-            <p className="mt-6 text-lg leading-relaxed text-[#4b564f]">
-              I’m Jad Boukentar, a game development student with a background in
-              architecture and a strong focus on Technical Art, gameplay systems,
-              and real-time visual development.
+            {/* SHORT INTRO */}
+            <p className="mt-8 text-center text-lg leading-relaxed text-[#4b564f] max-w-md mx-auto">
+              I’m Jad Boukentar, a Game Development graduate with a background in
+              architecture and project management, focused on Technical Art,
+              gameplay systems, and production-minded development.
             </p>
 
+            {/* INFO */}
             <div className="mt-8 space-y-4 border-t border-black/6 pt-8 text-sm sm:text-base">
               <div>
                 <p className="font-semibold uppercase tracking-[0.16em] text-[#94a394]">
@@ -48,7 +71,7 @@ export default function AboutScreen({ onBack }: Props) {
                   Focus
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Technical Art / Gameplay Systems / Unreal Engine
+                  Technical Art / Gameplay Systems / Tools / Unreal Engine
                 </p>
               </div>
 
@@ -57,112 +80,152 @@ export default function AboutScreen({ onBack }: Props) {
                   Education
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Game Development — Algonquin College
+                  Game Development — Algonquin College | Ottawa | Canada
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/resume.pdf"
-                className="rounded-full bg-[#d85b19] px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:-translate-y-0.5"
-              >
-                Load Resume
-              </a>
+            {/* BUTTONS */}
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="/resume.pdf"
+              className="min-w-[180px] rounded-full bg-[#d85b19] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white text-center transition hover:-translate-y-0.5 hover:scale-105"
+            >
+              Load Resume
+            </a>
 
-              <a
-                href="mailto:jad@example.com"
-                className="rounded-full border border-[#c7cbc3] px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#314038] transition hover:border-[#d85b19] hover:text-[#d85b19]"
-              >
-                Contact
-              </a>
-            </div>
+            <a
+              href="mailto:boukentar.jad@gmail.com"
+              className="min-w-[180px] rounded-full border border-[#c7cbc3] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#314038] text-center transition hover:border-[#d85b19] hover:text-[#d85b19] hover:-translate-y-0.5 hover:scale-105"
+            >
+              Contact
+            </a>
+          </div>
           </aside>
 
+          {/* RIGHT PANEL */}
           <div className="grid gap-8">
-            <section className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#94a394]">
-                Summary
-              </p>
+            {/* SUMMARY */}
+<section className="rounded-[2rem] border border-[#d85b19]/10 bg-gradient-to-br from-[#fffaf6] to-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
+  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d85b19]">
+    Summary
+  </p>
 
-              <div className="mt-5 space-y-4 text-base leading-relaxed text-[#4b564f] sm:text-lg">
-                <p>
-                  My work sits between visual design and technical implementation.
-                  I enjoy building shaders, materials, rigging setups, animation
-                  workflows, VFX, and gameplay-aware systems that make projects
-                  feel more polished, readable, and production-ready.
-                </p>
+  <div className="mt-5 space-y-6 border-l-2 border-[#d85b19]/30 pl-6 text-base leading-relaxed text-[#4b564f] sm:text-lg">
+    <p>
+      So… how does an architect end up in game development?
+    </p>
 
-                <p>
-                  With a background in architecture, I naturally think about
-                  space, composition, presentation, and structure. That carries
-                  into the way I approach game art, technical problem solving,
-                  and player-facing design.
-                </p>
+    <p>
+      I’ve been passionate about games for as long as I can remember. Growing up,
+      I was always fascinated by how they were made—especially hearing that some
+      of them took years to build. For some reason, my reaction was always the
+      same: <span className="italic text-[#314038]">“that doesn’t sound so bad, I could probably do that.”</span>
+    </p>
 
-                <p>
-                  I’m especially interested in roles where I can bridge teams and
-                  support the pipeline between art, design, and engineering.
-                </p>
-              </div>
-            </section>
+    <p>
+      I started my career in architecture and worked as a project manager, where
+      I learned how to think in systems, structure complex ideas, and support a
+      team’s needs in production. But that curiosity for games never really left,
+      and eventually I decided to go all in.
+    </p>
 
+    <p>
+      I joined Algonquin College through the programming path and graduated with
+      an excellent academic record. That gave me a strong technical foundation and
+      shaped how I approach development: writing clean, readable code and always
+      thinking about the people who will use it.
+    </p>
+
+    <p>
+      Somewhere along the way, I realized I wasn’t just interested in coding—or
+      just in art. I naturally fell into a space between both. As an artist who can
+      also program, I understand what artists need, what designers expect, and how
+      systems are built behind the scenes.
+    </p>
+
+    <p>
+      In my projects, that often meant bridging the gap: modeling, texturing,
+      rigging, implementing assets in-engine, coding behaviors, and connecting
+      backend systems to the tools and visuals the team interacts with.
+    </p>
+
+    <p>
+      Today, I focus on building that bridge—creating artist-friendly workflows,
+      supporting pipelines, and turning visual ideas into real, functional game
+      systems.
+    </p>
+  </div>
+</section>
+
+            {/* SKILLS + LINKS */}
             <div className="grid gap-8 lg:grid-cols-2">
-              <section className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#94a394]">
-                  What I Work On
-                </p>
+<section className="rounded-[2rem] border border-[#d85b19]/15 bg-gradient-to-br from-[#fff7f1] to-[#fffdfb] p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
+  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d85b19]">
+    Best Fit
+  </p>
 
-                <div className="mt-5 flex flex-wrap gap-3">
-                  {[
-                    "Shaders",
-                    "Materials",
-                    "Rigging",
-                    "VFX",
-                    "Animation Workflows",
-                    "Gameplay Systems",
-                    "UI Presentation",
-                    "Pipeline Support",
-                  ].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-[#eef1eb] px-4 py-2 text-xs font-semibold uppercase tracking-[0.13em] text-[#4b564f]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </section>
+  <div className="mt-5 space-y-5 text-sm text-[#4b564f] sm:text-base">
+    <div className="flex items-start gap-3">
+      <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#d85b19]" />
+      <p>
+        Technical Artist roles focused on shaders, materials, rigging, tools,
+        UI implementation, and artist-facing workflows.
+      </p>
+    </div>
+
+    <div className="flex items-start gap-3">
+      <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#d85b19]" />
+      <p>
+        Gameplay or technical design roles where visual implementation and
+        readable systems go hand in hand.
+      </p>
+    </div>
+  </div>
+</section>
 
               <section className="rounded-[2rem] border border-black/8 bg-white/70 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] sm:p-8">
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#94a394]">
                   Links
                 </p>
 
-                <div className="mt-5 space-y-3 text-sm sm:text-base">
+                <div className="mt-5 space-y-4 text-sm sm:text-base">
                   <a
-                    href="mailto:jad@example.com"
-                    className="block text-[#314038] transition hover:text-[#d85b19]"
+                    href="mailto:boukentar.jad@gmail.com"
+                    className="flex items-center gap-3 text-[#314038] transition hover:text-[#d85b19] hover:translate-x-1"
                   >
-                    jad@example.com
+                    <Mail size={18} />
+                    <span>boukentar.jad@gmail.com</span>
                   </a>
+
                   <a
-                    href="#"
-                    className="block text-[#314038] transition hover:text-[#d85b19]"
+                    href="https://www.linkedin.com/in/jad-boukentar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-[#314038] transition hover:text-[#d85b19] hover:translate-x-1"
                   >
-                    LinkedIn
+                    <Link size={18} />
+                    <span>linkedin.com/in/jad-boukentar</span>
                   </a>
+
                   <a
-                    href="#"
-                    className="block text-[#314038] transition hover:text-[#d85b19]"
+                    href="https://github.com/OzgardGames"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-[#314038] transition hover:text-[#d85b19] hover:translate-x-1"
                   >
-                    GitHub
+                    <FolderGit2 size={18} />
+                    <span>github.com/OzgardGames</span>
                   </a>
+
                   <a
-                    href="#"
-                    className="block text-[#314038] transition hover:text-[#d85b19]"
+                    href="https://www.artstation.com/jad-boukentar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-[#314038] transition hover:text-[#d85b19] hover:translate-x-1"
                   >
-                    ArtStation
+                    <Brush size={18} />
+                    <span>artstation.com/jad-boukentar</span>
                   </a>
                 </div>
               </section>

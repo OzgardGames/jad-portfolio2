@@ -36,7 +36,7 @@ const menuItems: MenuItem[] = [
     subtitle: "Shaders / Gameplay / Tech Art",
     description:
       "Case studies, systems, prototypes, and technical art work across Unreal Engine and Unity.",
-    image: "/projects/whiskey/ragdoll.png",
+    image: "/menus/projects.webp",
   },
   {
     id: "about",
@@ -45,7 +45,7 @@ const menuItems: MenuItem[] = [
     subtitle: "Profile / Contact / Resume",
     description:
       "Background, contact details, and a concise overview of my focus as a developer.",
-    image: "/projects/ties/hero.png",
+    image: "/menus/about.webp",
   },
   {
     id: "skills",
@@ -54,7 +54,7 @@ const menuItems: MenuItem[] = [
     subtitle: "Tools / Pipeline / Engine Work",
     description:
       "Technical art, gameplay systems, engine workflows, tools, and production-facing skills.",
-    image: "/projects/crowns/environment.png",
+    image: "/menus/skills.webp",
   },
   {
     id: "gallery",
@@ -63,7 +63,7 @@ const menuItems: MenuItem[] = [
     subtitle: "Breakdowns / Visuals / Experiments",
     description:
       "Selected visuals, supporting material, and ongoing artistic and technical exploration.",
-    image: "/gallery/hero.jpg",
+    image: "/menus/gallery.webp",
   },
 ];
 
@@ -83,27 +83,27 @@ export default function HomePage() {
   );
 
   return (
-    <main className="h-screen bg-[#efefec] text-[#18251f]">
-      <AnimatePresence mode="wait">
+    <main className="relative min-h-screen overflow-x-hidden bg-[#efefec] text-[#18251f]">
+      <AnimatePresence mode="wait" initial={false}>
         {screen === "hero" ? (
           <motion.div
             key="hero"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-hidden"
           >
             <HeroLandingScreen onStart={() => setScreen("menu")} />
           </motion.div>
         ) : screen === "menu" ? (
           <motion.div
             key="menu"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-hidden"
           >
             <MenuLandingScreen
               items={menuItems}
@@ -122,11 +122,11 @@ export default function HomePage() {
         ) : screen === "projects" ? (
           <motion.div
             key="projects"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-hidden"
           >
             <ProjectsHandScreen
               onBack={() => setScreen("menu")}
@@ -139,47 +139,49 @@ export default function HomePage() {
         ) : screen === "projectDetail" ? (
           <motion.div
             key="projectDetail"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0"
           >
-            <ProjectDetailScreen
-              projectId={activeProjectId}
-              onBack={() => setScreen("projects")}
-            />
+            <div className="h-full overflow-y-auto overscroll-contain">
+              <ProjectDetailScreen
+                projectId={activeProjectId}
+                onBack={() => setScreen("projects")}
+              />
+            </div>
           </motion.div>
         ) : screen === "about" ? (
           <motion.div
             key="about"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-hidden"
           >
             <AboutScreen onBack={() => setScreen("menu")} />
           </motion.div>
         ) : screen === "skills" ? (
           <motion.div
             key="skills"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-hidden"
           >
             <SkillsScreen onBack={() => setScreen("menu")} />
           </motion.div>
         ) : (
           <motion.div
             key="gallery"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -24 }}
+            initial={{ opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="h-full"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <GalleryScreen onBack={() => setScreen("menu")} />
           </motion.div>
