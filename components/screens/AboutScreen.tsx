@@ -71,7 +71,7 @@ export default function AboutScreen({ onBack }: Props) {
                   Focus
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Technical Art / Gameplay Systems / Tools / Unreal Engine
+                  Technical Art / Gameplay Systems / Engine Implementation
                 </p>
               </div>
 
@@ -80,7 +80,10 @@ export default function AboutScreen({ onBack }: Props) {
                   Education
                 </p>
                 <p className="mt-1 text-[#314038]">
-                  Game Development — Algonquin College | Ottawa | Canada
+                  Game Development - Algonquin College | Ottawa | Canada
+                </p>
+                <p className="mt-1 text-[#314038]">
+                  Architecture - National School of Architecture | Rabat | Morocco
                 </p>
               </div>
             </div>
@@ -118,28 +121,29 @@ export default function AboutScreen({ onBack }: Props) {
 
     <p>
       I’ve been passionate about games for as long as I can remember. Growing up,
-      I was always fascinated by how they were made—especially hearing that some
+      I was always fascinated by how they were made; especially hearing that some
       of them took years to build. For some reason, my reaction was always the
       same: <span className="italic text-[#314038]">“that doesn’t sound so bad, I could probably do that.”</span>
     </p>
 
     <p>
-      I started my career in architecture and worked as a project manager, where
+      I started my career in span <span className="bold text-[#d85b19]">architecture</span> and worked as a project manager, where
       I learned how to think in systems, structure complex ideas, and support a
       team’s needs in production. But that curiosity for games never really left,
-      and eventually I decided to go all in.
+      and eventually I decided to go all in, left everything and traveled all the 
+      way from <span className="bold text-[#d85b19]">Morocco</span> to <span className="bold text-[#d85b19]">Canada</span>, to chase a dream.
     </p>
 
     <p>
-      I joined Algonquin College through the programming path and graduated with
+      I joined <span className="bold text-[#d85b19]">Algonquin College</span> through the programming path and graduated with
       an excellent academic record. That gave me a strong technical foundation and
       shaped how I approach development: writing clean, readable code and always
       thinking about the people who will use it.
     </p>
 
     <p>
-      Somewhere along the way, I realized I wasn’t just interested in coding—or
-      just in art. I naturally fell into a space between both. As an artist who can
+      Somewhere along the way, I realized I wasn’t just coding, or
+      just doing art. I naturally fell into a space between both. As an artist who can
       also program, I understand what artists need, what designers expect, and how
       systems are built behind the scenes.
     </p>
@@ -151,7 +155,7 @@ export default function AboutScreen({ onBack }: Props) {
     </p>
 
     <p>
-      Today, I focus on building that bridge—creating artist-friendly workflows,
+      Today, I focus on building that bridge, creating artist-friendly workflows,
       supporting pipelines, and turning visual ideas into real, functional game
       systems.
     </p>

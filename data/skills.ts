@@ -15,6 +15,7 @@ export const skillGroups: SkillGroup[] = [
       "Rigging",
       "Skinning",
       "Animation Workflows",
+      "2D/3D Art",
       "UI Design",
       "UI Programming",
       "Pipeline Support",
@@ -54,6 +55,7 @@ export const skillGroups: SkillGroup[] = [
       "Substance Painter",
       "Photoshop",
       "Illustrator",
+      "Krita",
     ],
   },
 ];
