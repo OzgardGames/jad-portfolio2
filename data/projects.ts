@@ -796,10 +796,10 @@ export const projects: Project[] = [
         title: "Movement & Responsiveness",
         text:
           "A player controller designed around responsiveness and control, using techniques like input buffering, coyote time, and velocity tuning to create a fluid and forgiving movement experience.",
-        image: "/projects/ties/Movement2.webp",
+        image: "/projects/ties/movement2.webp",
         breakdownStyle: "visual",
         breakdown: {
-          video: "/projects/ties/videos/movement.mp4",
+          video: "/projects/ties/videos/movement1.mp4",
           notes: [
             "Input buffering helps actions trigger even when the input happens slightly early.",
             "Coyote time makes jumps more forgiving and improves player comfort.",
@@ -863,7 +863,7 @@ export const projects: Project[] = [
         image: "/projects/ties/ability.webp",
         breakdownStyle: "visual",
         breakdown: {
-          video: "/projects/ties/videos/abilities.mp4",
+          video: "/projects/ties/videos/abilities1.mp4",
           notes: [
             "Abilities are designed to chain together smoothly during traversal.",
             "Dash and jump extensions increase player expression and route variation.",
@@ -919,7 +919,7 @@ export const projects: Project[] = [
         image: "/projects/ties/interaction.webp",
         breakdownStyle: "visual",
         breakdown: {
-          video: "/projects/ties/videos/interaction.mp4",
+          video: "/projects/ties/videos/interaction1.mp4",
           notes: [
             "Environment interactions are built as gameplay systems rather than one-off actions.",
             "The feather ability changes how the player navigates and manipulates spaces.",
@@ -963,7 +963,7 @@ export const projects: Project[] = [
         image: "/projects/ties/hero.webp",
         breakdownStyle: "technical",
         breakdown: {
-          video: "/projects/ties/videos/levels.mp4",
+          video: "/projects/ties/videos/levels1.mp4",
           notes: [
             "Different levels were built to test the full range of the character’s mechanics.",
             "These spaces helped validate game feel and responsiveness across different degrees of complexity.",
