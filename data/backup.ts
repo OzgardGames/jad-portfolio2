@@ -40,6 +40,7 @@ export type Project = {
   categories: ProjectCategory[];
   image: string;
   accent: string;
+  infoBg: string;
   duration: string;
   team: string;
   responsibilities: string[];
@@ -84,6 +85,7 @@ export const projects: Project[] = [
 
     image: "/menus/coa.webp",
     accent: "#d85b19",
+    infoBg: "#2a221c",
     duration: "8 Months",
     team: "Team of 12",
 
@@ -345,6 +347,7 @@ export const projects: Project[] = [
     ],
     image: "/menus/landing.webp",
     accent: "#5f8f7b",
+    infoBg: "#1e2b28",
     duration: "4 Months",
     team: "Team of 6",
 
@@ -593,6 +596,7 @@ export const projects: Project[] = [
     categories: ["Technical Art", "Gameplay", "Shaders", "Level Design"],
     image: "/menus/wod.webp",
     accent: "#1f3b4d",
+    infoBg: "#16232c",
     duration: "Ongoing",
     team: "Solo Project",
     myRole:
@@ -779,6 +783,7 @@ export const projects: Project[] = [
     categories: ["Gameplay", "Animation", "Level Design"],
     image: "/menus/about.webp",
     accent: "#8b6a3e",
+    infoBg: "#2d2418",
     duration: "Prototype",
     team: "Solo Project",
     responsibilities: [

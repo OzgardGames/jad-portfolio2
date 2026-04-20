@@ -142,7 +142,7 @@ export default function ProjectDetailScreen({
 
   return (
     <section className="min-h-screen bg-[#efefec] text-[#18251f]">
-      <div className="mx-auto max-w-[1700px] px-6 py-8 sm:px-10 lg:px-14">
+      <div className="mx-auto max-w-[1500px] px-8 py-8 sm:px-12 lg:px-16 min-[2200px]:max-w-[1700px] min-[2200px]:px-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
             onClick={onBack}
@@ -192,7 +192,8 @@ export default function ProjectDetailScreen({
           </div>
         </section>
 
-        <section className="mt-6 overflow-hidden rounded-[1.5rem] bg-[#18251f] text-white">
+        <section className="mt-6 overflow-hidden rounded-[1.5rem] text-white"
+        style={{ backgroundColor: project.infoBg }}>
           <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
             <div className="border-b border-white/10 p-5 md:border-b-0 md:border-r">
               <p className="text-[10px] uppercase tracking-[0.18em] text-white/40">

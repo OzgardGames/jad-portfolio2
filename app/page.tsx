@@ -92,7 +92,7 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <HeroLandingScreen onStart={() => setScreen("menu")} />
           </motion.div>
@@ -103,7 +103,7 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <MenuLandingScreen
               items={menuItems}
@@ -126,7 +126,7 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <ProjectsHandScreen
               onBack={() => setScreen("menu")}
@@ -159,7 +159,7 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <AboutScreen onBack={() => setScreen("menu")} />
           </motion.div>
@@ -170,7 +170,7 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.985 }}
             transition={screenTransition}
-            className="absolute inset-0 overflow-hidden"
+            className="absolute inset-0 overflow-y-auto overflow-x-hidden"
           >
             <SkillsScreen onBack={() => setScreen("menu")} />
           </motion.div>
