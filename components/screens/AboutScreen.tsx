@@ -1,16 +1,27 @@
 import { Mail, FolderGit2, Brush, Link } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type Props = {
-  onBack: () => void;
+  onBack?: () => void;
 };
 
 export default function AboutScreen({ onBack }: Props) {
+  const router = useRouter();
+
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
+
+    router.push("/menu");
+  };
   return (
     <section className="min-h-screen bg-[#efefec] text-[#18251f]">
       <div className="mx-auto max-w-[1700px] px-6 py-8 sm:px-10 lg:px-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
-            onClick={onBack}
+            onClick={handleBack}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back

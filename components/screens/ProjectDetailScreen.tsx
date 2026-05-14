@@ -2,16 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { projects } from "@/data/projects";
+import { projects, type BreakdownStep } from "@/data/projects";
 
 type Props = {
   projectId: string;
-  onBack: () => void;
+  onBack?: () => void;
 };
 
 type LightboxState = {
   title: string;
-  items: { image: string; caption: string }[];
+  items: BreakdownStep[];
   index: number;
 } | null;
 
@@ -20,10 +20,7 @@ const TRANSITION = {
   ease: [0.22, 1, 0.36, 1] as const,
 };
 
-export default function ProjectDetailScreen({
-  projectId,
-  onBack,
-}: Props) {
+export default function ProjectDetailScreen({ projectId, onBack }: Props) {
   const project = useMemo(
     () => projects.find((item) => item.id === projectId),
     [projectId]
@@ -48,7 +45,8 @@ export default function ProjectDetailScreen({
           return {
             ...current,
             index:
-              (current.index - 1 + current.items.length) % current.items.length,
+              (current.index - 1 + current.items.length) %
+              current.items.length,
           };
         });
       } else if (event.key === "ArrowRight") {
@@ -70,12 +68,21 @@ export default function ProjectDetailScreen({
     };
   }, [lightbox]);
 
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
+
+    window.history.back();
+  };
+
   if (!project) {
     return (
       <section className="min-h-screen bg-[#efefec] text-[#18251f]">
         <div className="mx-auto max-w-[1700px] px-6 py-8 sm:px-10 lg:px-14">
           <button
-            onClick={onBack}
+            onClick={handleBack}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -111,7 +118,7 @@ export default function ProjectDetailScreen({
 
   const openLightbox = (
     title: string,
-    items: { image: string; caption: string }[],
+    items: BreakdownStep[],
     index: number
   ) => {
     setLightbox({ title, items, index });
@@ -140,12 +147,38 @@ export default function ProjectDetailScreen({
     });
   };
 
+  const renderStepMedia = (
+    step: BreakdownStep,
+    className: string,
+    alt: string
+  ) => {
+    if (step.video) {
+      return (
+        <video
+          src={step.video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className={className}
+        />
+      );
+    }
+
+    if (step.image) {
+      return <img src={step.image} alt={alt} className={className} />;
+    }
+
+    return <div className="h-full w-full bg-[#d9ddd6]" />;
+  };
+
   return (
     <section className="min-h-screen bg-[#efefec] text-[#18251f]">
       <div className="mx-auto max-w-[1500px] px-8 py-8 sm:px-12 lg:px-16 min-[2200px]:max-w-[1700px] min-[2200px]:px-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
-            onClick={onBack}
+            onClick={handleBack}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -192,8 +225,10 @@ export default function ProjectDetailScreen({
           </div>
         </section>
 
-        <section className="mt-6 overflow-hidden rounded-[1.5rem] text-white"
-        style={{ backgroundColor: project.infoBg }}>
+        <section
+          className="mt-6 overflow-hidden rounded-[1.5rem] text-white"
+          style={{ backgroundColor: project.infoBg }}
+        >
           <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-4">
             <div className="border-b border-white/10 p-5 md:border-b-0 md:border-r">
               <p className="text-[10px] uppercase tracking-[0.18em] text-white/40">
@@ -499,14 +534,16 @@ export default function ProjectDetailScreen({
                                           )
                                         }
                                         className="block w-full cursor-zoom-in text-left"
-                                        aria-label={`Open ${section.title} image ${stepIndex + 1}`}
+                                        aria-label={`Open ${section.title} media ${
+                                          stepIndex + 1
+                                        }`}
                                       >
                                         <div className="overflow-hidden border-b border-black/6 bg-[#d9ddd6]">
-                                          <img
-                                            src={step.image}
-                                            alt={`${section.title} step ${stepIndex + 1}`}
-                                            className="h-[320px] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                                          />
+                                          {renderStepMedia(
+                                            step,
+                                            "h-[320px] w-full object-cover transition duration-500 group-hover:scale-[1.02]",
+                                            `${section.title} step ${stepIndex + 1}`
+                                          )}
                                         </div>
                                       </button>
 
@@ -542,14 +579,16 @@ export default function ProjectDetailScreen({
                                           )
                                         }
                                         className="block w-full cursor-zoom-in text-left"
-                                        aria-label={`Open ${section.title} image ${stepIndex + 1}`}
+                                        aria-label={`Open ${section.title} media ${
+                                          stepIndex + 1
+                                        }`}
                                       >
                                         <div className="aspect-square overflow-hidden bg-black/5">
-                                          <img
-                                            src={step.image}
-                                            alt={`${section.title} step ${stepIndex + 1}`}
-                                            className="h-full w-full object-contain transition duration-300 hover:scale-[1.02]"
-                                          />
+                                          {renderStepMedia(
+                                            step,
+                                            "h-full w-full object-contain transition duration-300 hover:scale-[1.02]",
+                                            `${section.title} step ${stepIndex + 1}`
+                                          )}
                                         </div>
                                       </button>
 
@@ -688,7 +727,7 @@ export default function ProjectDetailScreen({
                   showPrevImage();
                 }}
                 className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white/20 sm:left-6"
-                aria-label="Previous image"
+                aria-label="Previous media"
               >
                 ←
               </button>
@@ -699,7 +738,7 @@ export default function ProjectDetailScreen({
                   showNextImage();
                 }}
                 className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white/20 sm:right-6"
-                aria-label="Next image"
+                aria-label="Next media"
               >
                 →
               </button>
@@ -724,11 +763,23 @@ export default function ProjectDetailScreen({
                     className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111]"
                   >
                     <div className="relative">
-                      <img
-                        src={lightbox.items[lightbox.index].image}
-                        alt={lightbox.title}
-                        className="max-h-[78vh] w-full object-contain bg-black"
-                      />
+                      {lightbox.items[lightbox.index].video ? (
+                        <video
+                          src={lightbox.items[lightbox.index].video}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="auto"
+                          className="max-h-[78vh] w-full object-contain bg-black"
+                        />
+                      ) : (
+                        <img
+                          src={lightbox.items[lightbox.index].image}
+                          alt={lightbox.title}
+                          className="max-h-[78vh] w-full object-contain bg-black"
+                        />
+                      )}
 
                       <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.88),rgba(0,0,0,0.45),transparent)] px-5 pb-5 pt-16 sm:px-8 sm:pb-8">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
@@ -757,7 +808,7 @@ export default function ProjectDetailScreen({
                             ? "w-8 bg-white"
                             : "w-2.5 bg-white/35 hover:bg-white/55"
                         }`}
-                        aria-label={`Go to image ${dotIndex + 1}`}
+                        aria-label={`Go to media ${dotIndex + 1}`}
                       />
                     ))}
                   </div>

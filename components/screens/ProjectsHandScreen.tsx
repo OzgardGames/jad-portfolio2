@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
   projectFilters,
   projects,
@@ -9,14 +10,15 @@ import {
 } from "@/data/projects";
 
 type Props = {
-  onBack: () => void;
-  onOpenProject: (projectId: string) => void;
+  onBack?: () => void;
+  onOpenProject?: (projectId: string) => void;
 };
 
 export default function ProjectsHandScreen({
   onBack,
   onOpenProject,
 }: Props) {
+  const router = useRouter();
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>("All");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
@@ -25,12 +27,30 @@ export default function ProjectsHandScreen({
     return projects.filter((project) => project.categories.includes(activeFilter));
   }, [activeFilter]);
 
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
+
+    router.push("/menu");
+  };
+
+  const handleOpenProject = (projectId: string) => {
+    if (onOpenProject) {
+      onOpenProject(projectId);
+      return;
+    }
+
+    router.push(`/menu/projects/${projectId}`);
+  };
+
   return (
     <section className="min-h-screen bg-[#efefec] text-[#18251f]">
       <div className="mx-auto max-w-[1800px] px-5 py-5 sm:px-8 sm:py-6 md:px-10 lg:px-12 lg:py-6 xl:px-14 xl:py-10">
         <div className="flex items-center justify-start">
           <button
-            onClick={onBack}
+            onClick={handleBack}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -40,17 +60,17 @@ export default function ProjectsHandScreen({
         <div className="mt-4 grid grid-cols-1 gap-6 lg:mt-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start xl:mt-10 xl:gap-8">
           <div className="max-w-3xl">
             <p className="text-[clamp(0.88rem,0.95vw,1.4rem)] font-light uppercase tracking-[-0.03em] text-[#94a394] min-[1280px]:text-[clamp(0.72rem,0.75vw,0.95rem)] min-[2200px]:text-[clamp(0.88rem,0.95vw,1.4rem)]">
-  Selected Work
-</p>
+              Selected Work
+            </p>
 
             <h1 className="mt-1 text-[clamp(2.7rem,5.4vw,7.4rem)] font-black uppercase leading-[0.88] tracking-[-0.07em] text-[#d85b19] min-[1280px]:text-[clamp(1.8rem,2.5vw,3.2rem)] min-[2200px]:text-[clamp(2.7rem,5.4vw,7.4rem)]">
               Projects
             </h1>
 
             <p className="mt-3 max-w-2xl text-[0.9rem] leading-relaxed text-[#4b564f] min-[1280px]:mt-2 min-[1280px]:max-w-xl min-[1280px]:text-[0.84rem] min-[2200px]:mt-3 min-[2200px]:max-w-2xl min-[2200px]:text-lg">
-  A curated set of projects focused on technical art, gameplay systems,
-  shaders, rigging, and real-time visual presentation.
-</p>
+              A curated set of projects focused on technical art, gameplay systems,
+              shaders, rigging, and real-time visual presentation.
+            </p>
           </div>
 
           <div className="hidden lg:block lg:pt-1 xl:pt-3">
@@ -108,7 +128,7 @@ export default function ProjectsHandScreen({
                   type="button"
                   onMouseEnter={() => setHoveredId(project.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => onOpenProject(project.id)}
+                  onClick={() => handleOpenProject(project.id)}
                   initial={false}
                   animate={{
                     x: baseX,
@@ -191,17 +211,17 @@ export default function ProjectsHandScreen({
                       ? "bg-[#d85b19] text-white"
                       : "border border-[#c7cbc3] bg-white/55 text-[#314038] hover:border-[#d85b19] hover:text-[#d85b19]"
                   }`}
-                  >
-                    {filter}
-                  </button>
-                );
-              })}
+                >
+                  {filter}
+                </button>
+              );
+            })}
           </div>
 
           {filteredProjects.map((project) => (
             <button
               key={project.id}
-              onClick={() => onOpenProject(project.id)}
+              onClick={() => handleOpenProject(project.id)}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
               className="text-left"

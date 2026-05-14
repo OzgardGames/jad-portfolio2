@@ -10,7 +10,8 @@ export type ProjectCategory =
   | "Tools";
 
 export type BreakdownStep = {
-  image: string;
+  image?: string;
+  video?: string;
   caption: string;
   label?: string;
 };

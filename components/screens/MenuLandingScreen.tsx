@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 type MenuItem = {
   id: string;
@@ -16,8 +17,8 @@ type MenuLandingScreenProps = {
   selected: string;
   selectedItem: MenuItem;
   onSelect: (id: string) => void;
-  onBack: () => void;
-  onOpen: (id: string) => void;
+  onBack?: () => void;
+  onOpen?: (id: string) => void;
 };
 
 export default function MenuLandingScreen({
@@ -28,13 +29,32 @@ export default function MenuLandingScreen({
   onOpen,
 }: MenuLandingScreenProps) {
   const selectedIndex = items.findIndex((item) => item.id === selected);
+  const router = useRouter();
+
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
+
+    router.push("/");
+  };
+
+  const handleOpen = (id: string) => {
+    if (onOpen) {
+      onOpen(id);
+      return;
+    }
+
+    router.push(`/menu/${id}`);
+  };
 
   return (
     <section className="min-h-screen overflow-hidden bg-[#efefec] text-[#18251f]">
       <div className="mx-auto grid min-h-screen max-w-[1800px] grid-cols-1 overflow-hidden lg:grid-cols-[minmax(500px,0.4fr)_minmax(0,0.6fr)] xl:grid-cols-[minmax(520px,0.38fr)_minmax(0,0.62fr)]">
         <aside className="flex h-full min-h-0 flex-col overflow-hidden px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-9 lg:px-12 lg:py-10 xl:px-16 xl:py-14">
           <button
-            onClick={onBack}
+            onClick={handleBack}
             className="w-fit text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -59,7 +79,7 @@ export default function MenuLandingScreen({
                   key={item.id}
                   onMouseEnter={() => onSelect(item.id)}
                   onFocus={() => onSelect(item.id)}
-                  onClick={() => onOpen(item.id)}
+                  onClick={() => handleOpen(item.id)}
                   className="group text-left"
                 >
                   <motion.div
@@ -164,7 +184,9 @@ export default function MenuLandingScreen({
                     onMouseEnter={() => onSelect(item.id)}
                     onFocus={() => onSelect(item.id)}
                     onClick={() =>
-                      item.id === selected ? onOpen(item.id) : onSelect(item.id)
+                      item.id === selected
+                        ? handleOpen(item.id)
+                        : onSelect(item.id)
                     }
                     initial={false}
                     animate={{

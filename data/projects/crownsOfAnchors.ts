@@ -79,7 +79,62 @@ export const crownsOfAnchors: Project = {
               caption: "Defined visual direction for the team.",
             },
             {
-              image: "/projects/crowns/concepts.png",
+              image: "/projects/crowns/story-tutorial.png",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/moodboards.png",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/color-palette.png",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/ui-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/combatui-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/character-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/map-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/map-detailed.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/weapons-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/anchor-concept.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/anchor-detailed.jpg",
+              label: "Concept Art",
+              caption: "Established visual identity.",
+            },
+            {
+              image: "/projects/crowns/board-concept.jpg",
               label: "Concept Art",
               caption: "Established visual identity.",
             },
@@ -104,7 +159,7 @@ export const crownsOfAnchors: Project = {
           ],
           steps: [
             {
-              image: "/projects/crowns/ui-concepts.png",
+              image: "/projects/crowns/ui-concepts.jpg",
               label: "Concept",
               caption: "UI direction and layout.",
             },
@@ -114,9 +169,34 @@ export const crownsOfAnchors: Project = {
               caption: "Blueprint UI systems.",
             },
             {
-              image: "/projects/crowns/ui-final.png",
-              label: "Final",
-              caption: "Integrated UI system.",
+              video: "/projects/crowns/ui_characters.mp4",
+              label: "Character Selection",
+              caption: "Integrated UI system - Character Selection Example.",
+            },
+            {
+              video: "/projects/crowns/ui_squad.mp4",
+              label: "Squad Logic",
+              caption: "Integrated UI system - Squad Example.",
+            },
+            {
+              video: "/projects/crowns/ui_testing.mp4",
+              label: "UI Testing",
+              caption: "Fully Testable UI Setup - Manipulation and Behaviours",
+            },
+            {
+              video: "/projects/crowns/ui_controls.mp4",
+              label: "UI Animation Controls",
+              caption: "Instant Value controls for UI animations",
+            },
+            {
+              video: "/projects/crowns/animatedui.mp4",
+              label: "Animated UI",
+              caption: "Animated UI Behaviours.",
+            },
+            {
+              video: "/projects/crowns/ui_shaders.mp4",
+              label: "UI Shaders Maniulation",
+              caption: "UI materials and Shaders Manipulation.",
             },
           ],
         },
@@ -138,12 +218,32 @@ export const crownsOfAnchors: Project = {
           ],
           steps: [
             {
-              image: "/projects/crowns/nodes-types.png",
+              video: "/projects/crowns/nodes-types.png",
+              label: "Combat Node Types",
+              caption: "Gameplay nodes.",
+            },
+            {
+              video: "/projects/crowns/nodes-dissolve.png",
+              label: "Normal Node Types",
+              caption: "Dissolve effect.",
+            },
+            {
+              video: "/projects/crowns/nodes-types.png",
               label: "Node Types",
               caption: "Gameplay nodes.",
             },
             {
-              image: "/projects/crowns/nodes-dissolve.png",
+              video: "/projects/crowns/nodes-dissolve.png",
+              label: "Interaction",
+              caption: "Dissolve effect.",
+            },
+            {
+              video: "/projects/crowns/nodes-types.png",
+              label: "Node Types",
+              caption: "Gameplay nodes.",
+            },
+            {
+              video: "/projects/crowns/nodes-dissolve.png",
               label: "Interaction",
               caption: "Dissolve effect.",
             },

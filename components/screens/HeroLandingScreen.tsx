@@ -1,14 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 type HeroLandingScreenProps = {
-  onStart: () => void;
+  onStart?: () => void;
 };
 
 export default function HeroLandingScreen({
   onStart,
 }: HeroLandingScreenProps) {
+  const router = useRouter();
+
+  const handleStart = () => {
+    if (onStart) {
+      onStart();
+      return;
+    }
+
+    router.push("/menu");
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#efefec] text-[#18251f]">
       <div className="absolute inset-0">
@@ -52,7 +64,7 @@ export default function HeroLandingScreen({
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
             <button
-              onClick={onStart}
+              onClick={handleStart}
               className="group inline-flex min-h-[54px] min-w-[176px] items-center justify-center rounded-full bg-[#d85b19] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(216,91,25,0.24)] xl:min-h-[56px] xl:min-w-[190px] xl:px-8"
             >
               <span className="inline-flex items-center gap-2">
