@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { galleryItems } from "@/data/gallery";
 
 type Props = {
-  onBack: () => void;
+  onBack?: () => void;
 };
 
 const INITIAL_COUNT = 8;
 const LOAD_MORE_COUNT = 4;
 
 export default function GalleryScreen({ onBack }: Props) {
+  const router = useRouter();
+
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -21,15 +24,21 @@ export default function GalleryScreen({ onBack }: Props) {
 
   const showPrevious = () => {
     if (selectedIndex === null) return;
+
     setSelectedIndex(
-      selectedIndex === 0 ? galleryItems.length - 1 : selectedIndex - 1
+      selectedIndex === 0
+        ? galleryItems.length - 1
+        : selectedIndex - 1
     );
   };
 
   const showNext = () => {
     if (selectedIndex === null) return;
+
     setSelectedIndex(
-      selectedIndex === galleryItems.length - 1 ? 0 : selectedIndex + 1
+      selectedIndex === galleryItems.length - 1
+        ? 0
+        : selectedIndex + 1
     );
   };
 
@@ -54,7 +63,7 @@ export default function GalleryScreen({ onBack }: Props) {
       <div className="mx-auto max-w-[1700px] px-6 py-8 sm:px-10 lg:px-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
-            onClick={onBack}
+            onClick={() => (onBack ? onBack() : router.back())}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -102,6 +111,7 @@ export default function GalleryScreen({ onBack }: Props) {
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/75">
                     {item.type}
                   </p>
+
                   <h2 className="mt-1 text-lg font-black uppercase leading-[0.95] tracking-[-0.04em] text-white sm:text-xl">
                     {item.title}
                   </h2>
@@ -181,6 +191,7 @@ export default function GalleryScreen({ onBack }: Props) {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                 {galleryItems[selectedIndex].type}
               </p>
+
               <h2 className="mt-2 text-2xl font-black uppercase tracking-[-0.04em] text-white sm:text-3xl">
                 {galleryItems[selectedIndex].title}
               </h2>
