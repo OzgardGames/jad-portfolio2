@@ -1,16 +1,21 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { skillGroups } from "@/data/skills";
 
 type Props = {
-  onBack: () => void;
+  onBack?: () => void;
 };
 
 export default function SkillsScreen({ onBack }: Props) {
+  const router = useRouter();
+
   return (
     <section className="min-h-screen bg-[#efefec] text-[#18251f]">
       <div className="mx-auto max-w-[1700px] px-6 py-8 sm:px-10 lg:px-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
-            onClick={onBack}
+            onClick={() => (onBack ? onBack() : router.back())}
             className="text-sm font-semibold uppercase tracking-[0.2em] text-[#94a394] transition hover:text-[#d85b19]"
           >
             ← Back
@@ -44,8 +49,9 @@ export default function SkillsScreen({ onBack }: Props) {
                 <p className="font-semibold uppercase tracking-[0.16em] text-[#94a394]">
                   Main Focus
                 </p>
+
                 <p className="mt-1 text-[#314038]">
-                  Technical Art / Game Design / Gameplay Systems 
+                  Technical Art / Game Design / Gameplay Systems
                 </p>
               </div>
 
@@ -53,6 +59,7 @@ export default function SkillsScreen({ onBack }: Props) {
                 <p className="font-semibold uppercase tracking-[0.16em] text-[#94a394]">
                   Engines
                 </p>
+
                 <p className="mt-1 text-[#314038]">
                   Unreal Engine / Unity
                 </p>
@@ -62,6 +69,7 @@ export default function SkillsScreen({ onBack }: Props) {
                 <p className="font-semibold uppercase tracking-[0.16em] text-[#94a394]">
                   Approach
                 </p>
+
                 <p className="mt-1 text-[#314038]">
                   Bridging art and code with simple and readable systems.
                 </p>
