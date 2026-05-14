@@ -5,7 +5,7 @@ export const whiskeyBusiness: Project = {
     title: "Whiskey Business",
     year: "2025",
     engine: "Unreal Engine 5",
-    role: "Technical Artist / Gameplay & Tool Programmer",
+    role: "Technical Artist / Gameplay & Tools Programmer",
     description:
       "Stylized party brawler featuring shared character rigs, shader-based gameplay readability, and physics-driven combat systems.",
     longDescription:
